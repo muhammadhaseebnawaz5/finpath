@@ -1380,6 +1380,18 @@ def copy_brand_asset():
         print(f"  ! missing {src}")
 
 
+def copy_feed_stylesheet():
+    """Copy the browser-friendly RSS stylesheet into the generated site."""
+    import shutil
+
+    src = ROOT / "assets" / "feed.xsl"
+    dest = OUT / "feed.xsl"
+    if src.exists():
+        shutil.copy2(src, dest)
+    else:
+        print(f"  ! missing {src}")
+
+
 def build_extras(keep=None):
     urls = [(f"{CFG['domain']}/", TODAY, "1.0", "daily")]
     urls.append((f"{CFG['domain']}/articles.html", TODAY, "0.8", "weekly"))
@@ -1426,6 +1438,7 @@ def build_extras(keep=None):
     <pubDate>{a['updated']}T09:00:00+00:00</pubDate>
   </item>""")
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>
+  <?xml-stylesheet type="text/xsl" href="feed.xsl"?>
 <rss version="2.0"><channel>
   <title>{CFG['name']} — {CFG['tagline']}</title>
   <link>{CFG['domain']}</link>
@@ -1481,6 +1494,7 @@ def main():
     build_extras(keep)
     copy_ads_files()
     copy_brand_asset()
+    copy_feed_stylesheet()
 
     removed = prune_output(keep)
     for r in removed:
