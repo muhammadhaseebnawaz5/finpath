@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>FinPath — Plain-English money guides</title>
+  <link>https://www.finpath.example</link>
+  <description>Independent educational guides on loans, insurance, credit and saving.</description>
+  <language>en</language>
+  <lastBuildDate>2026-09-24T09:00:00+00:00</lastBuildDate>
+  <item>
+    <title>How loan amortisation actually works</title>
+    <link>https://www.finpath.example/articles/how-loan-amortization-works.html</link>
+    <guid isPermaLink="true">https://www.finpath.example/articles/how-loan-amortization-works.html</guid>
+    <description>A month-by-month breakdown of where every dollar and pound of an instalment goes — plus the fee traps that make two identical rates cost very different amounts.</description>
+    <category>Loans</category>
+    <pubDate>2026-08-19T09:00:00+00:00</pubDate>
+  </item>
+  <item>
+    <title>How much life insurance cover do you need?</title>
+    <link>https://www.finpath.example/articles/insurance-cover-how-much-do-you-need.html</link>
+    <guid isPermaLink="true">https://www.finpath.example/articles/insurance-cover-how-much-do-you-need.html</guid>
+    <description>The DIME method, the term-versus-whole-life trade-off, and the underwriting details that decide whether a claim is paid or declined.</description>
+    <category>Insurance</category>
+    <pubDate>2026-07-28T09:00:00+00:00</pubDate>
+  </item>
+  <item>
+    <title>What credit card minimum payments really cost</title>
+    <link>https://www.finpath.example/articles/how-credit-card-minimum-payments-work.html</link>
+    <guid isPermaLink="true">https://www.finpath.example/articles/how-credit-card-minimum-payments-work.html</guid>
+    <description>A $1,000 balance paid at the minimum can take over six years and cost more than the original debt. Here is the arithmetic, the policy background, and the exit route.</description>
+    <category>Credit &amp;amp; Debt</category>
+    <pubDate>2026-08-05T09:00:00+00:00</pubDate>
+  </item>
+  <item>
+    <title>How much emergency fund do you need?</title>
+    <link>https://www.finpath.example/articles/emergency-fund-how-much.html</link>
+    <guid isPermaLink="true">https://www.finpath.example/articles/emergency-fund-how-much.html</guid>
+    <description>Three to twelve months of expenses, held somewhere boring on purpose — with a realistic plan for getting there if the number feels impossible.</description>
+    <category>Saving</category>
+    <pubDate>2026-09-02T09:00:00+00:00</pubDate>
+  </item>
+  <item>
+    <title>Tax-efficient accounts, explained simply</title>
+    <link>https://www.finpath.example/articles/tax-efficient-saving-accounts-explained.html</link>
+    <guid isPermaLink="true">https://www.finpath.example/articles/tax-efficient-saving-accounts-explained.html</guid>
+    <description>ISAs, 401(k)s, IRAs, TFSAs and HSAs — what each wrapper actually does to your tax bill, and the order of operations that fits most households.</description>
+    <category>Saving</category>
+    <pubDate>2026-09-14T09:00:00+00:00</pubDate>
+  </item>
+  <item>
+    <title>Where to keep your savings: HYSA, CDs and T-bills compared</title>
+    <link>https://www.finpath.example/articles/where-to-keep-your-savings.html</link>
+    <guid isPermaLink="true">https://www.finpath.example/articles/where-to-keep-your-savings.html</guid>
+    <description>The same $20,000 can earn almost nothing or several hundred dollars a year depending only on where it sits. Here is how each cash option works, what it costs you in access, and how the interest is taxed.</description>
+    <category>Saving</category>
+    <pubDate>2026-09-20T09:00:00+00:00</pubDate>
+  </item>
+</channel></rss>

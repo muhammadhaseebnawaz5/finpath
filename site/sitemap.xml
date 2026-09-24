@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.finpath.example/</loc><lastmod>2026-09-24</lastmod><priority>1.0</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://www.finpath.example/articles.html</loc><lastmod>2026-09-24</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.finpath.example/articles/how-loan-amortization-works.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.finpath.example/articles/insurance-cover-how-much-do-you-need.html</loc><lastmod>2026-07-28</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.finpath.example/articles/how-credit-card-minimum-payments-work.html</loc><lastmod>2026-08-05</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.finpath.example/articles/emergency-fund-how-much.html</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.finpath.example/articles/tax-efficient-saving-accounts-explained.html</loc><lastmod>2026-09-14</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.finpath.example/articles/where-to-keep-your-savings.html</loc><lastmod>2026-09-20</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.finpath.example/about.html</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.finpath.example/contact.html</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
+</urlset>

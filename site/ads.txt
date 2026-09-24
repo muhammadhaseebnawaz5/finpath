@@ -1,0 +1,4 @@
+# After AdSense approval, replace the placeholder below with the line AdSense gives you
+# (AdSense → Account → Account information). It looks like:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-XXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
