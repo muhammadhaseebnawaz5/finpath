@@ -21,10 +21,34 @@
     parent.appendChild(script);
   }
 
+  function addZoneScript(unit) {
+    if (
+      !unit ||
+      !unit.src ||
+      !unit.zone ||
+      document.querySelector('script[src="' + unit.src + '"]')
+    )
+      return;
+    var script = document.createElement("script");
+    script.dataset.zone = unit.zone;
+    script.src = unit.src;
+    script.async = true;
+    script.onerror = function () {
+      console.warn(
+        "[ads] Monetag script could not be loaded: " + unit.src,
+      );
+    };
+    document.head.appendChild(script);
+  }
+
   var thirdParty = CFG.thirdParty || {};
   if (thirdParty.enabled) {
     addScript(thirdParty.popunder, true, document.head);
     addScript(thirdParty.socialBar, true, document.body);
+
+    var monetag = thirdParty.monetag || {};
+    addZoneScript(monetag.popunder);
+    addZoneScript(monetag.vignette);
 
     var native = thirdParty.nativeBanner;
     var nativeTarget = document.querySelector(".ad-slot[data-slot]");
