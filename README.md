@@ -77,7 +77,7 @@ That outlines every ad slot with its ID, format and placement note. Nothing is l
 
 ## 3. Turning ads on — done for you, one file to edit
 
-AdSense remains optional. The third-party Popunder and Social Bar scripts run site-wide, as do the configured Monetag Popunder and Vignette scripts. The Native Banner appears in the first existing ad placement on pages that have one. The 728×90 unit sits below the navigation on desktop, 300×250 units in article sidebars, and the 320×50 unit is shown by the footer on narrow screens.
+AdSense remains optional. The third-party Popunder and Social Bar scripts run site-wide, and the Native Banner appears in the first existing ad placement on pages that have one. The 728×90 unit sits below the navigation on desktop, 300×250 units in article sidebars, and the 320×50 unit is shown by the footer on narrow screens.
 
 ### The 3-minute setup
 

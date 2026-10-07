@@ -37,16 +37,6 @@ window.FINPATH_ADS = {
       "https://pl31704339.profitableratecpmnetwork.com/6f/45/8a/6f458a26260216054708d80852f2aa24.js",
     socialBar:
       "https://pl31704341.profitableratecpmnetwork.com/7c/74/da/7c74daf4c58ef333c254a39640557a39.js",
-    monetag: {
-      popunder: {
-        zone: "11974159",
-        src: "https://al5sm.com/tag.min.js",
-      },
-      vignette: {
-        zone: "11974161",
-        src: "https://n6wxm.com/vignette.min.js",
-      },
-    },
     nativeBanner: {
       src: "https://pl31704340.profitableratecpmnetwork.com/38e1be6514c43b3af8a53d50b173acf7/invoke.js",
       containerId: "container-38e1be6514c43b3af8a53d50b173acf7",
