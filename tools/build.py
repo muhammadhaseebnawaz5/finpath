@@ -890,6 +890,7 @@ def build_article(a):
         f"article-sidebar-{a['slug'][:18]}",
         "300×250 and 300×600 responsive unit",
         "Sticky sidebar unit. Desktop only — it disappears on small screens along with the sidebar column.",
+        network_unit="banner-300x250",
     )
     cat_key = a["cat"][1]
     cat_name = CATS[cat_key]["name"]

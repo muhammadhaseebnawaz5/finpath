@@ -77,14 +77,25 @@ def tick():
 
 
 # --------------------------------------------------------------------------- ad slots
-def ad(slot, fmt, hint):
+def ad(slot, fmt, hint, network_unit=None):
     """A hidden-when-empty ad container. Paste AdSense code inside the div."""
+    network_attr = (
+        f' data-ad-unit="{network_unit}"' if network_unit else ""
+    )
     return f"""<!-- ===== AD SLOT: {slot} =====
      Recommended unit: {fmt}
      Where: {hint}
      To go live: paste the AdSense <ins class="adsbygoogle"> snippet just below,
      inside the ad-slot div, and delete this comment. Nothing else to change. -->
-<div class="ad-slot" data-slot="{slot}" data-format="{fmt}" data-hint="{hint}"></div>"""
+<div class="ad-slot" data-slot="{slot}" data-format="{fmt}" data-hint="{hint}"{network_attr}></div>"""
+
+
+def network_ad(unit):
+    """A responsive placement for a configured third-party banner unit."""
+    return (
+        f'<div class="network-ad" data-ad-unit="{unit}" '
+        'aria-label="Advertisement"></div>'
+    )
 
 
 # --------------------------------------------------------------------------- chrome
@@ -113,11 +124,13 @@ def header(active="", root=""):
       <div class="top-cta"><a class="btn btn-primary btn-sm" href="{root}articles.html">Read guides</a></div>
     </nav>
   </div>
-</header>"""
+</header>
+{network_ad("banner-728x90")}"""
 
 
 def footer(root=""):
-    return f"""<footer class="foot">
+    return f"""{network_ad("banner-320x50")}
+<footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-about">
@@ -203,7 +216,8 @@ def shell(
      ADSENSE: replace the line below with your own publisher ID.
      Get it from AdSense -> Account -> Account information.
      ============================================================ -->
-<meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">{ld}
+<meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+{('<meta name="monetag" content="5f6e4d90740df1dfe12aaafb8a72f82a">') if slug == "index.html" else ""}{ld}
 <style>{CSS}</style>
 </head>
 <body{(' class="' + body_class + '"') if body_class else ""}>

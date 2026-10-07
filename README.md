@@ -1,8 +1,8 @@
 # FinPath — US finance / insurance / loans content site
 
-A complete, AdSense-ready static website for a **US personal-finance audience** (loans, insurance, credit and saving — the highest advertiser-demand categories). Design follows the reference you sent: dark violet gradient hero, rounded cards, phone mockup, badge-and-card layout. Built as a **zero-dependency static site** — one HTML file per page, one CSS file, one JS file, no fonts or scripts fetched from anywhere — so it loads in well under a second on mobile data.
+A complete, AdSense-ready static website for a **US personal-finance audience** (loans, insurance, credit and saving — the highest advertiser-demand categories). Design follows the reference you sent: dark violet gradient hero, rounded cards, phone mockup, badge-and-card layout. Built as a **zero-dependency static site** — one HTML file per page, one CSS file, one JS file, no fonts or scripts fetched from anywhere except the configured ad network — so it loads in well under a second on mobile data.
 
-**Included:** 10 pages, 6 in-depth guides (1,700–2,300 words each) with primary-source citations, 9 photos + 4 branded data charts, and a complete ad system.
+**Included:** 10 pages, 6 in-depth guides (1,700–2,300 words each) with primary-source citations, 9 photos + 4 branded data charts, and an ad system.
 
 ```
 /home/user
@@ -70,14 +70,14 @@ That outlines every ad slot with its ID, format and placement note. Nothing is l
 | Editorial transparency        | `editorial-standards.html`: sourcing rules, independence, review process, corrections policy.                                                                                                                                          |
 | Financial disclaimer          | Site-wide footer block + `disclaimer.html` + a disclaimer in every guide. This matters for YMYL ("your money or your life") content.                                                                                                   |
 | Legal pages                   | Terms of use, disclaimer and privacy policy without a consent popup or tracking gate.                                                                                                                                                  |
-| Technical                     | `robots.txt` explicitly allows `Mediapartners-Google` and `AdsBot-Google`, sitemap, RSS feed, canonical URLs, Open Graph, Article/Breadcrumb/FAQ schema, mobile-first responsive, no pop-ups, no auto-playing video, no interstitials. |
-| Policy safety                 | No "click here" ad-baiting, no ads disguised as navigation, no ads inside a sentence, no more than 2–4 units per page, calculator results never gated behind an ad click.                                                              |
+| Technical                     | `robots.txt` explicitly allows `Mediapartners-Google` and `AdsBot-Google`, sitemap, RSS feed, canonical URLs, Open Graph, Article/Breadcrumb/FAQ schema, mobile-first responsive, no auto-playing video, no interstitials. |
+| Policy safety                 | No "click here" ad-baiting, no ads disguised as navigation, no ads inside a sentence, no more than 2–4 units per page, calculator results never gated behind an ad click. Third-party popunder ads are enabled in the current ad configuration. |
 
 ---
 
 ## 3. Turning ads on — done for you, one file to edit
 
-The ad system is built. Every ad position already exists on the page, is labelled, and is **invisible until you switch it on**, so the site works perfectly with ads off.
+AdSense remains optional. The third-party Popunder and Social Bar scripts run site-wide, and the Native Banner appears in the first existing ad placement on pages that have one. The 728×90 unit sits below the navigation on desktop, 300×250 units in article sidebars, and the 320×50 unit is shown by the footer on narrow screens.
 
 ### The 3-minute setup
 

@@ -9,6 +9,95 @@
   var CFG = window.FINPATH_ADS;
   if (!CFG) return;
 
+  /* ---------- third-party network units ---------- */
+  function addScript(src, async, parent) {
+    if (!src || document.querySelector('script[src="' + src + '"]')) return;
+    var script = document.createElement("script");
+    script.src = src;
+    script.async = async;
+    script.onerror = function () {
+      console.warn("[ads] Third-party ad script could not be loaded: " + src);
+    };
+    parent.appendChild(script);
+  }
+
+  var thirdParty = CFG.thirdParty || {};
+  if (thirdParty.enabled) {
+    addScript(thirdParty.popunder, true, document.head);
+    addScript(thirdParty.socialBar, true, document.body);
+
+    var native = thirdParty.nativeBanner;
+    var nativeTarget = document.querySelector(".ad-slot[data-slot]");
+    if (
+      native &&
+      native.src &&
+      native.containerId &&
+      nativeTarget &&
+      !document.getElementById(native.containerId)
+    ) {
+      var nativeContainer = document.createElement("div");
+      nativeContainer.id = native.containerId;
+      nativeTarget.appendChild(nativeContainer);
+
+      var nativeScript = document.createElement("script");
+      nativeScript.async = true;
+      nativeScript.setAttribute("data-cfasync", "false");
+      nativeScript.src = native.src;
+      nativeScript.onerror = function () {
+        console.warn(
+          "[ads] Native banner script could not be loaded: " + native.src,
+        );
+      };
+      document.body.appendChild(nativeScript);
+    }
+
+    var bannerStyle = document.createElement("style");
+    bannerStyle.textContent =
+      ".network-ad{display:flex;justify-content:center;align-items:center;max-width:100%;margin:18px auto;overflow:hidden}" +
+      ".network-ad[data-ad-unit='banner-728x90']{min-height:90px}" +
+      ".network-ad[data-ad-unit='banner-300x250']{min-height:250px}" +
+      ".network-ad[data-ad-unit='banner-320x50']{display:none;min-height:50px}" +
+      "@media(max-width:760px){.network-ad[data-ad-unit='banner-728x90']{display:none}}" +
+      "@media(max-width:560px){.network-ad[data-ad-unit='banner-320x50']{display:flex}}";
+    document.head.appendChild(bannerStyle);
+
+    var banners = thirdParty.banners || {};
+    var pendingBanners = [].slice
+      .call(document.querySelectorAll(".network-ad[data-ad-unit]"))
+      .filter(function (container) {
+        var unit = banners[container.getAttribute("data-ad-unit")];
+        return unit && unit.key && !container.dataset.loaded;
+      });
+
+    function loadBanner(index) {
+      if (index >= pendingBanners.length) return;
+      var container = pendingBanners[index];
+      var unit = banners[container.getAttribute("data-ad-unit")];
+      container.dataset.loaded = "1";
+      window.atOptions = {
+        key: unit.key,
+        format: "iframe",
+        height: unit.height,
+        width: unit.width,
+        params: {},
+      };
+      var bannerScript = document.createElement("script");
+      bannerScript.src =
+        "https://www.highrevenueformat.com/" + unit.key + "/invoke.js";
+      bannerScript.async = false;
+      bannerScript.onload = function () {
+        loadBanner(index + 1);
+      };
+      bannerScript.onerror = function () {
+        console.warn("[ads] Banner unit could not be loaded: " + unit.key);
+        loadBanner(index + 1);
+      };
+      container.appendChild(bannerScript);
+    }
+
+    loadBanner(0);
+  }
+
   /* ---------- not configured yet: do nothing at all ---------- */
   var clientLooksReal = /^ca-pub-\d{10,}$/.test(CFG.client || "");
   if (!CFG.enabled || !clientLooksReal) {

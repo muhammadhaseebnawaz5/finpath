@@ -30,6 +30,36 @@
    ========================================================================== */
 
 window.FINPATH_ADS = {
+  /* Third-party network units are separate from the optional AdSense setup. */
+  thirdParty: {
+    enabled: true,
+    popunder:
+      "https://pl31704339.profitableratecpmnetwork.com/6f/45/8a/6f458a26260216054708d80852f2aa24.js",
+    socialBar:
+      "https://pl31704341.profitableratecpmnetwork.com/7c/74/da/7c74daf4c58ef333c254a39640557a39.js",
+    nativeBanner: {
+      src: "https://pl31704340.profitableratecpmnetwork.com/38e1be6514c43b3af8a53d50b173acf7/invoke.js",
+      containerId: "container-38e1be6514c43b3af8a53d50b173acf7",
+    },
+    banners: {
+      "banner-300x250": {
+        key: "e3c8af9b6070f7d1fe3356d95d66dfb6",
+        width: 300,
+        height: 250,
+      },
+      "banner-728x90": {
+        key: "8e89eb883a163d63b2c0c080c19ceffe",
+        width: 728,
+        height: 90,
+      },
+      "banner-320x50": {
+        key: "28580d6dd997b491de04a91a324f780c",
+        width: 320,
+        height: 50,
+      },
+    },
+  },
+
   /* master switch — false means the site loads no ad script at all */
   enabled: false,
 
