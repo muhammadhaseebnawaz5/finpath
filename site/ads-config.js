@@ -33,8 +33,11 @@ window.FINPATH_ADS = {
   /* Third-party network units are separate from the optional AdSense setup. */
   thirdParty: {
     enabled: true,
-    popunder:
-      "https://pl31704339.profitableratecpmnetwork.com/6f/45/8a/6f458a26260216054708d80852f2aa24.js",
+    monetag: {
+      zone: "11974159",
+      src: "https://al5sm.com/tag.min.js",
+    },
+    adsterraPopunder: "//pl31603840.highrevenuegate.com/31603840.js",
     socialBar:
       "https://pl31704341.profitableratecpmnetwork.com/7c/74/da/7c74daf4c58ef333c254a39640557a39.js",
     nativeBanner: {

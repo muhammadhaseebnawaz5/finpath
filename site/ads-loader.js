@@ -10,11 +10,12 @@
   if (!CFG) return;
 
   /* ---------- third-party network units ---------- */
-  function addScript(src, async, parent) {
+  function addScript(src, async, parent, zone) {
     if (!src || document.querySelector('script[src="' + src + '"]')) return;
     var script = document.createElement("script");
     script.src = src;
     script.async = async;
+    if (zone) script.dataset.zone = zone;
     script.onerror = function () {
       console.warn("[ads] Third-party ad script could not be loaded: " + src);
     };
@@ -23,7 +24,21 @@
 
   var thirdParty = CFG.thirdParty || {};
   if (thirdParty.enabled) {
-    addScript(thirdParty.popunder, true, document.head);
+    if (thirdParty.monetag) {
+      addScript(
+        thirdParty.monetag.src,
+        true,
+        document.body || document.documentElement,
+        thirdParty.monetag.zone,
+      );
+    }
+    setTimeout(function () {
+      addScript(
+        thirdParty.adsterraPopunder,
+        true,
+        document.head || document.documentElement,
+      );
+    }, 3000);
     addScript(thirdParty.socialBar, true, document.body);
 
     var native = thirdParty.nativeBanner;
