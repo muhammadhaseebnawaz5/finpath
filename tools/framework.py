@@ -217,7 +217,7 @@ def shell(
      Get it from AdSense -> Account -> Account information.
      ============================================================ -->
 <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
-{('<meta name="monetag" content="5f6e4d90740df1dfe12aaafb8a72f82a">\n<script async data-zone="11974159" src="https://al5sm.com/tag.min.js"></script>\n<script async data-zone="11974161" src="https://n6wxm.com/vignette.min.js"></script>') if slug == "index.html" else ""}{ld}
+{('<meta name="monetag" content="5f6e4d90740df1dfe12aaafb8a72f82a">\n<script async data-zone="11974159" src="https://al5sm.com/tag.min.js"></script>') if slug == "index.html" else ""}{ld}
 <style>{CSS}</style>
 </head>
 <body{(' class="' + body_class + '"') if body_class else ""}>
