@@ -190,6 +190,27 @@ def shell(
         f'\n<script type="application/ld+json">{json.dumps(s, separators=(",", ":"))}</script>'
         for s in (schema or [])
     )
+    corner_ads_css = ""
+    corner_ads = ""
+    if slug == "index.html":
+        corner_ads_css = (
+            '<meta name="monetag" content="5f6e4d90740df1dfe12aaafb8a72f82a">\n'
+            "<style>.corner-ad{position:fixed;bottom:10px;z-index:9999}"
+            ".corner-ad--left{left:10px}"
+            ".corner-ad--right{right:10px;width:300px;max-width:300px;overflow:hidden}"
+            "@media(max-width:767px){.corner-ad{display:none}}</style>"
+        )
+        corner_ads = """<div class="corner-ad corner-ad--left" aria-label="Advertisement"><script>(function(s){s.dataset.zone='12087391',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script></div>
+<div class="corner-ad corner-ad--right" aria-label="Advertisement"><script>
+atOptions = {
+  'key' : 'e3c8af9b6070f7d1fe3356d95d66dfb6',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/e3c8af9b6070f7d1fe3356d95d66dfb6"></script></div>"""
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -217,7 +238,7 @@ def shell(
      Get it from AdSense -> Account -> Account information.
      ============================================================ -->
 <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
-{('<meta name="monetag" content="5f6e4d90740df1dfe12aaafb8a72f82a">\n<script>(function(s){s.dataset.zone=\'11992796\',s.src=\'https://nap5k.com/tag.min.js\'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement(\'script\')))</script>') if slug == "index.html" else ""}{ld}
+{corner_ads_css}{ld}
 <style>{CSS}</style>
 </head>
 <body{(' class="' + body_class + '"') if body_class else ""}>
@@ -226,6 +247,7 @@ def shell(
 {body}
 </main>
 {footer(root)}
+{corner_ads}
 <script>{JS}</script>
 <script src="{root}ads-config.js"></script>
 <script src="{root}ads-loader.js" defer></script>
